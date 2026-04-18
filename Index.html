@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>1 Month ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ffd6e0,#fff0f5);overflow:hidden} .card{background:rgba(255,255,255,.85);padding:32px;border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,.12);text-align:center;max-width:520px;width:92%} h1{font-size:2rem;margin:0 0 12px;color:#d6336c} p{color:#555;margin:0 0 24px} button{border:none;background:#ff4d88;color:#fff;padding:14px 28px;border-radius:999px;font-size:1.1rem;cursor:pointer;box-shadow:0 10px 25px rgba(255,77,136,.35)} button:hover{transform:translateY(-2px)} .hidden{display:none} .hearts span{position:fixed;bottom:-20px;font-size:22px;animation:float 6s linear infinite;opacity:.8} @keyframes float{to{transform:translateY(-120vh);opacity:0}} .msg{font-size:1.4rem;color:#d6336c;font-weight:bold;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="card">
+<h1 id="title">Will you celebrate 1 month with me, Shivangi? ❤️</h1>
+<p id="subtitle">One month of smiles, memories, and us ✨</p><div id="intro" style="margin:10px 0 18px;color:#d6336c;font-weight:600;min-height:24px"></div><audio id="bgm" loop><source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8d47bcd0d.mp3?filename=romantic-piano-ambient-110624.mp3" type="audio/mpeg"></audio>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><button onclick="celebrate()">Yes 💕</button><button id="noBtn" style="background:#999" onmouseover="moveNo()" onclick="moveNo()">No 🙈</button></div>
+<div id="result" class="msg hidden">Yayyy ❤️ Happy 1 Month!</div>
+</div>
+<div class="hearts" id="hearts"></div>
+<script>
+function celebrate(){document.getElementById('result').classList.remove('hidden');document.getElementById('subtitle').innerText='Best decision ever 😘';for(let i=0;i<40;i++){setTimeout(makeHeart,i*90)}}
+function makeHeart(){const s=document.createElement('span');s.innerText='💖';s.style.left=Math.random()*100+'vw';s.style.animationDuration=(4+Math.random()*3)+'s';document.getElementById('hearts').appendChild(s);setTimeout(()=>s.remove(),7000)}
+let noCount=0;function moveNo(){const msgs=['Are you sure? 🥺','Think again 😌','Nice try 😏','Still no? ❤️','You can only say yes 😘'];const b=document.getElementById('noBtn');const t=document.getElementById('title');t.innerText=msgs[Math.min(noCount,msgs.length-1)];noCount++;b.style.position='fixed';b.style.left=Math.random()*80+'vw';b.style.top=Math.random()*80+'vh';}
+const introText='Hey Shivangi... I have one important question ❤️';let idx=0;function typeIntro(){if(idx<introText.length){document.getElementById('intro').innerText+=introText[idx++];setTimeout(typeIntro,55)}}typeIntro();window.addEventListener('click',()=>{const a=document.getElementById('bgm');a.play().catch(()=>{});},{once:true});</script>
+</body>
+</html>
